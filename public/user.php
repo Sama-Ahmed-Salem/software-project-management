@@ -1,6 +1,7 @@
 <?php
 require '../app/db/config.php'; // Database configuration
 require '../app/model/user_class.php';
+require '../app/model/task_class.php';
 
 // Check if the user is signed in
 if (!isset($_SESSION['username'])) {
@@ -10,6 +11,7 @@ if (!isset($_SESSION['username'])) {
 
 // Create a User object
 $user = new User($conn);
+$task=new task($conn);
 
 // Handle Task Submission
 $message = '';
@@ -19,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add-task'])) {
     $taskPriority = $_POST['task-priority'];
     $taskCategory = $_POST['task-category'];
 
-    $user->submitTask($taskName, $taskDate, $taskPriority, $taskCategory);
+    $task->submitTask($taskName, $taskDate, $taskPriority, $taskCategory);
     $message = $user->getMessage();
 }
 
@@ -458,7 +460,7 @@ border-radius: 50%;
                         <!-- Task items will appear here -->
                         <?php
                         // Fetch tasks for the logged-in user
-                        $tasks = $user->fetchTasks();
+                        $tasks = $task->fetchTasks();
                         if ($tasks->num_rows > 0) {
                             while ($task = $tasks->fetch_assoc()) {
                                 $completedClass = $task['task_status'] === 'Complete' ? 'completed' : '';
