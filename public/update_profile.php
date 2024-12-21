@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $newPassword = $_POST['new-password'];
         $confirmPassword = $_POST['confirm-password'];
 
-        // Password validation regex
+        // Password validation 
         $passwordRegex = '/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\W_]).{8,}$/';
 
         if (!preg_match($passwordRegex, $newPassword)) {

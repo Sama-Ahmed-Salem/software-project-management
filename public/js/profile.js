@@ -15,6 +15,8 @@ document.getElementById('changePasswordBtn').addEventListener('click', function(
   document.getElementById('changePasswordForm').style.display = 'block';
   document.getElementById('changeUsernameForm').style.display = 'none';
   document.getElementById('changeEmailForm').style.display = 'none';
+
+
 });
 
 function updateUsername() {
