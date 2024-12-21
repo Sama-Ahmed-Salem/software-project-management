@@ -32,50 +32,32 @@ unset($_SESSION['message']); // Clear message after displaying it
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
     <link rel="stylesheet" href="../public/css/profile.css">
-    <style>
-        .success-message {
-            color: #fff;
-            background-color: #28a745;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-            text-align: center;
-            animation: fadeOut 5s forwards;
-        }
-        
-        @keyframes fadeOut {
-            0% { opacity: 1; }
-            80% { opacity: 1; }
-            100% { opacity: 0; display: none; }
-        }
-    </style>
+    
 </head>
 <body>
 <?php include '../app/views/dashboard.php'; ?>
 
     <div class="profile-container">
-        <!-- Success Message -->
-        <?php if ($message): ?>
+        <!-- success message -->
+        <?php if ($message): ?> 
             <div class="success-message">
                 <?php echo $message; ?>
             </div>
         <?php endif; ?>
 
-        <!-- Profile Image and Details -->
+        <!-- Profile Image-->
         <div class="profile-icon">
             <img src="../public/images/profile picture.png" alt="Profile Image">
         </div>
         <h2 id="usernameDisplay"><?php echo $name; ?></h2>
         <p>Email: <span id="emailDisplay"><?php echo $email; ?></span></p>
 
-        <!-- Buttons for changing details -->
         <div class="buttons">
             <button id="changeUsernameBtn" class="btn">Change Username</button>
             <button id="changeEmailBtn" class="btn">Change Email</button>
             <button id="changePasswordBtn" class="btn">Change Password</button>
         </div>
 
-        <!-- Forms for changing details (hidden by default) -->
         <div id="username-form" class="change-form" style="display: none;">
             <form action="update_profile.php" method="POST">
                 <label for="new-username">New Username:</label>
@@ -109,7 +91,7 @@ unset($_SESSION['message']); // Clear message after displaying it
 
     <script src="../public/js/profile.js"></script>
     <script>
-        // JavaScript to dynamically replace the updated values without reloading the page
+        //replace the updated values without reloading the page
         document.getElementById('changeUsernameBtn').addEventListener('click', function() {
             showForm('username');
         });

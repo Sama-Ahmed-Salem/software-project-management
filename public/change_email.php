@@ -1,13 +1,7 @@
 <?php
 session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Update email logic here
-    // Validate and update the email in the database
     $new_email = $_POST["new_email"];
-    
-    // Your database logic to update email goes here
-    // Example: $user->updateEmail($new_email);
-    
     echo "Email updated successfully.";
 }
 ?>
