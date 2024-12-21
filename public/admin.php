@@ -40,8 +40,10 @@ $users = $admin->retrieveUsersWithTasks();  // Fetch the users and tasks
     <div class="container">
         <h1 class="welcome-header">Welcome Admin</h1>
         <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="Search by Username..." onkeyup="filterTable()">
-        </div>
+        <input type="text" id="searchInput" placeholder="Search by Username..." onkeyup="filterTable()">
+
+</div>
+
         <table id="adminTable">
             <thead>
                 <tr>
