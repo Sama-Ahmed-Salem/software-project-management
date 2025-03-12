@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; 
+}
+
+/* Soft pastel background */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #F3F8FF; /* Soft pastel blue */
+}
+
+/* Contact Heading */
+.contact h2 {
+    margin-top: 70px;
+    font-size: 40px;
+    color: #2C3E50; /* Deep navy */
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Form Styling */
+.contact form {
+    width: 600px;
+    text-align: center;
+}
+
+/* Input Box Container */
+form .input-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-box .input-field {
+    width: 48.5%;
+}
+
+/* Input Fields */
+.field .item {
+    width: 100%;
+    padding: 18px;
+    background: #fff; /* White background for clean look */
+    border: 2px solid #8E44AD; /* Soft purple border */
+    outline: none;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #2C3E50; /* Dark navy text */
+    margin: 12px 0;
+    transition: 0.3s ease-in-out;
+}
+
+/* Error State */
+.field.error .item {
+    border-color: #E74C3C; /* Modern red for errors */
+}
+
+/* Placeholder Text */
+.field .item::placeholder {
+    color: rgba(44, 62, 80, 0.5); /* Light navy for subtle contrast */
+}
+
+/* Error Text */
+.field .error-txt {
+    font-size: 14.5px;
+    color: #E74C3C; /* Error red */
+    text-align: left;
+    margin: -5px 0 10px;
+    display: none;
+}
+
+.field.error .error-txt {
+    display: block;
+}
+
+/* Textarea Field */
+form .textarea-field.item {
+    resize: none;
+}
+
+/* Submit Button */
+form button {
+    padding: 12px 32px;
+    background: #3498DB; /* Vibrant blue */
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.5); /* Soft blue glow */
+    font-size: 16px;
+    color: #fff; /* White text */
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.4s ease-in-out;
+}
+
+/* Button Hover Effect */
+form button:hover {
+    background: #1A5276; /* Deeper blue */
+    box-shadow: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact form {
+        width: 90%;
+    }
+    
+    form .input-box {
+        flex-direction: column;
+    }
+
+    .input-box .input-field {
+        width: 100%;
+    }
+}
